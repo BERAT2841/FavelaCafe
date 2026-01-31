@@ -341,17 +341,32 @@ section{padding:110px 8%}
 
 <script>
 function openMenu(id){
+  history.pushState({menu:id}, "", "#"+id);
+
   document.getElementById("covers").style.display="none";
   document.querySelectorAll(".menu-list").forEach(m=>m.style.display="none");
   document.getElementById(id).style.display="block";
   window.scrollTo(0,0);
 }
+
 function goBack(){
+  history.pushState({}, "", "#home");
   document.querySelectorAll(".menu-list").forEach(m=>m.style.display="none");
   document.getElementById("covers").style.display="block";
   window.scrollTo(0,0);
 }
+
+window.onpopstate = function(event){
+  if(event.state && event.state.menu){
+    openMenu(event.state.menu);
+  }else{
+    document.querySelectorAll(".menu-list").forEach(m=>m.style.display="none");
+    document.getElementById("covers").style.display="block";
+  }
+}
 </script>
+
 
 </body>
 </html>
+
