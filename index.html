@@ -144,6 +144,29 @@ section{padding:110px 8%}
   cursor:pointer;
   color:var(--gold);
 }
+.favela-btn{
+  background:linear-gradient(135deg,#c9a24d,#f1d27a);
+  color:#000;
+  border:none;
+  padding:15px 34px;
+  border-radius:999px;
+  font-size:1rem;
+  font-weight:600;
+  letter-spacing:.5px;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(201,162,77,.35);
+  transition:all .35s ease;
+}
+
+.favela-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 18px 40px rgba(201,162,77,.55);
+}
+
+.favela-btn:active{
+  transform:translateY(0);
+  box-shadow:0 10px 25px rgba(201,162,77,.35);
+}
 </style>
 </head>
 
@@ -151,9 +174,12 @@ section{padding:110px 8%}
 
 <nav>
     <div>
-        <span>Favela Cafe</span>
+        <span><h2>Favela Cafe</h2></span>
+        <div style="text-align:center;margin-top:40px"></div>
     
-  <div class="back" onclick="goBack()"><span><h3>Menü</h3></span> </div>
+  <button class="favela-btn" onclick="openMenu('food')">
+  Menüyü Gör
+</button>
   </div>
 </nav>
 
